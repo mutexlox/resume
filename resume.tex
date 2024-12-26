@@ -32,92 +32,92 @@
 
 \begin{resume}
 
-%\section{Notable coursework}
-% \course{15-410}{Operating System Design and Implementation}
-% {Wrote preemptive, multithreaded kernel and thread library. TA'd course.}{A}
-% \course{15-418}{Parallel Computer Architecture and Programming}
-%  {Wrote and optimized parallel code.}{B}
-%%  \end{tabular}
-%      \vspace{-2em}
-
 % \section{Interests} Kernel and other low-level programming and security (primarily binary exploitation, reverse engineering, and cryptography)
 
 \section{Experience}
-  \textbf{Google: Software Engineer}, Google Cloud Security \hfill July 2015 --
+  \textbf{Google: Senior Software Engineer}, ChromeOS \hfill 2022 --
+  \begin{minipage}{0.84\textwidth}
+    \vspace{0.2em}
+    \begin{itemize} \itemsep -1pt
+        \item Tech Lead for ChromeOS Experimentation
+        \item Led implementation for early-boot A/B experimentation:
+          \vspace{-0.5em}
+          \begin{itemize} \itemsep -1pt
+              \item Collaborated with Product Manager on outreach to
+                prospective client teams, ensuring our solution met their needs
+              \item Mentored new hire junior engineer, delegating work to them
+              \item Implemented complex, safety-critical pieces, e.g.
+                disaster recovery
+          \end{itemize}
+        \item Performed reviews of configuration changes for A/B testing,
+          checking for safety, proper data analysis, and code health
+    \end{itemize}
+  \end{minipage}
+
+  \textbf{Google: Software Engineer}, ChromeOS \hfill 2018 -- 2022
+  \begin{minipage}{0.84\textwidth}
+    \vspace{0.2em}
+    \begin{itemize} \itemsep -1pt
+        \item Designed, planned, and assigned work for long-term,
+          multi-engineer early-boot A/B experimentation project, prioritizing
+          safety and revovery from buggy experiments
+       \item Designed and implemented late-boot A/B experimentation outside of
+          browser, working with client teams to ensure their needs were met
+        \item Designed and implemented system to upload crashes that occur
+          during integration testing, collaborating with test lab infrastructure
+          teams
+        \item Implemented integration tests for crash reporting, detecting many
+          bugs
+        \item Implemented alerts to notify teams when code has high-rate crashes
+        \item Improved reliability of crash reporting system by implementing
+          metrics, fixing bugs, and managing server load
+        \item Ported interrupt-handling devices from kernel to userspace
+          (in Rust)
+    \end{itemize}
+  \end{minipage}
+
+  \textbf{Google: Software Engineer}, Cloud Security \hfill 2015 -- 2018
   \begin{minipage}{0.84\textwidth}
     \vspace{0.2em}
     \begin{itemize} \itemsep -1pt
         \item Worked on Trusted Platform Module code and related software:
           \vspace{-0.5em}
           \begin{itemize} \itemsep -1pt
-            \item Found bugs in Linux kernel's TPM 2.0 driver; wrote and
-              merged fixes to upstream
+            \item Found bugs in Linux TPM driver; wrote and upstreamed fixes
             \item Wrote code to generate Endorsement Key certificates
             \item Implemented TPM register interface to public specification
             \item Dramatically increased test coverage and added automated fuzzing
           \end{itemize}
-        \item Substantially increased difficulty for an attacker that manages
-          to break out of a virtual machine to move laterally to other
-          production machines.
-        \item Evaluated several options for detecting the Spectre and Meltdown
-          vulnerabilities using Intel hardware performance counters:
+        \item Substantially increased difficulty for an attacker that breaks
+          out of a virtual machine to move laterally to other production
+          machines
+        \item Evaluated several options for detecting Spectre and Meltdown:
           \vspace{-0.5em}
           \begin{itemize} \itemsep -1pt
             \item Reviewed research on side-channel cache attack detection
-            \item Proposed detection methods
+            \item Proposed detection methods using performance counters
             \item Measured false positive/negative rates for proposed schemes
             \item Wrote a widely-read internal report on detection options
           \end{itemize}
         \item Designed, implemented, and evaluated several hardware
-          performance counter options to attempt to detect specific
-          malicious behavior on Google Compute Engine.
-        \item Worked on implementation and test infrastructure for a
-          minimal Type-I hypervisor. Automated test process and reduced time
-          to run tests from roughly 30 minutes to roughly 5.
+          performance counter options to detect specific
+          malicious behavior on GCE
+        \item Automated test process for a minimal Type-I hypervisor and
+          reduced time to run tests from roughly 30 minutes to roughly 5
         \item Developed a plan to improve inclusiveness in the Cloud Security
-          organization as it grows, shared it with the directors of the org,
-          and met with one of them to discuss it in depth and further develop
-          it.
+          organization as it grows, shared it with the directors,
+          and met with one director to discuss in depth and further develop it
     \end{itemize}
   \end{minipage}
 
-  \textbf{TEALS: Volunteer Teacher} \hfill 2017-2018
+  \textbf{TEALS: Volunteer Teacher} \hfill 2017 -- 2021
   \begin{minipage}{0.84\textwidth}
     \vspace{0.2em}
     \begin{itemize} \itemsep -1pt
-      \item Began as a volunteer TA and stepped up to volunteer teacher when need arose
-      \item Make and deliver lectures on Advanced Placement CS topics
+      \item Crafted and delivered lectures on Advanced Placement CS topics
+        to high school students in an underprivileged school
     \end{itemize}
   \end{minipage}
-
-  \textbf{Google: Software Engineering Intern} \hfill Summer 2014
-  \begin{minipage}{0.84\textwidth}
-    \vspace{0.2em}
-    \begin{itemize} \itemsep -1pt
-      \item Worked on hardware key storage support for end-to-end
-      \item Participated in a successful penetration testing exercise
-    \end{itemize}
-  \end{minipage}
-
-  \textbf{Google: Site Reliability Engineering Intern}
-    \hfill Summer 2013
-    \begin{minipage}{0.84\textwidth}
-      \vspace{0.2em}
-      \begin{itemize} \itemsep -1pt
-        \item Improved reliability of a program that garbage collects old files
-        \item Increased usability of a tool used to analyze monitoring files
-      \end{itemize}
-    \end{minipage}
-
-  \textbf{Khan Academy: Software Engineering Intern} \hfill Summer 2012
-    \begin{minipage}{0.84\textwidth}
-      \vspace{0.2em}
-    \begin{itemize} \itemsep -1pt
-        \item Simplified A/B testing for changes in certain key metrics
-        \item Wrote a script to monitor rate of bug reports
-          (\href{https://github.com/Khan/beep-boop}{git.io/dweXRw})
-      \end{itemize}
-    \end{minipage}
 
 \section{Education}
   \textbf{Carnegie Mellon University}, School of Computer Science
@@ -125,10 +125,10 @@
   B.S. in Computer Science with University Honors (GPA: 3.82)
 
 \section{Languages}
-  C++, C, Python, bash, x86 assembly, Java, SML, \LaTeX, JavaScript
+  C++, C, Python, Go, bash, x86 assembly, Rust, Java, SML, \LaTeX, JavaScript
 
 \section{Tools}
-  vim, bazel, googletest, Abseil C++ libs, protobuf, git, Mercurial, svn, Eclipse
+  vim, gdb, bazel, googletest, Abseil C++ libs, protobuf, git, Mercurial, svn, Eclipse
 
 \end{resume}
 \end{document}
