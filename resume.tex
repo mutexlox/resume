@@ -8,6 +8,17 @@
 %\usepackage{helvetica} % uses helvetica postscript font (get helvetica.sty)
 %\usepackage{newcent}   % uses new century schoolbook postscript font
 
+\newcommand{\course}[4]{ %
+    %\begin{minipage}{0.6\resumewidth}
+    \textbf{#1}: \textit{#2} (#4)\\
+      #3
+      \vspace{1em}
+  %\end{minipage} & \begin{minipage}{1em}
+  %    #3\\
+  %    \vphantom{#2}
+  %    \vspace{1em}
+ % \end{minipage} \\}
+    \\}
 \begin{document}
 
 \name{Josh Zimmerman \\[12pt]} % the \\[12pt] adds a blank line after name
@@ -30,50 +41,55 @@
   \textbf{Carnegie Mellon University}, School of Computer Science
     \hfill May 2015\\
   B.S. in Computer Science\\
-  Cumulative GPA: 3.81
+  Cumulative GPA: 3.84
 
 \section{Notable coursework}
-  \textbf{Current}\\
-  \hphantom{ } 15-410, Operating System Design and Implementation\\
-  \textbf{Past}\vspace{0.25em}\\
-  \begin{tabular}{ll}
-    18-487, Intro. to Computer \& Network Security \& Applied Crypto. & A\\
-                                           21-600, Mathematical Logic & A
-  \end{tabular}
+%  \textbf{Current}\\
+%  \hphantom{ }
+%  \textbf{Past}\vspace{0.25em}\\
+%  \begin{tabular}{ll}
+ \course{15-410}{Operating System Design and Implementation}
+ {Implemented a fully preemptive, multithreaded kernel, a userspace thread \\library, and a bootloader}{A}
+  \course{18-487}{Intro. to Computer \& Network Security \& Applied Crypto.}
+ {Did binary exploitation, cryptographic attacks, and web exploits.}{A}
+%  \end{tabular}
+      \vspace{-2em}
 
 \section{Experience}
   \textbf{Google, Software Engineering Intern} \hfill Summer 2014
   \begin{itemize} \itemsep -2pt  % reduce space between items
-    \item I will work on either kernel exploitation and vulnerability discovery \\
-      or discovering weaknesses in popular SSL libraries.
+    \item Worked on end-to-end, a Chrome extension implementing OpenPGP\\
+      (\href{https://code.google.com/p/end-to-end/}{code.google.com/p/end-to-end/})
+    \item Participated in a penetration testing exercise which found security\\
+      vulnerabilities in Google's infrastructure
   \end{itemize}
   \textbf{Google, Site Reliability Engineering Intern}
     \hfill Summer 2013
   \begin{itemize} \itemsep -2pt  % reduce space between items
     \item Increased configurability of a program that garbage collects old files,\\
-          improving reliability of systems that serve those files.
+          improving reliability of systems that serve those files
     \item Improved accessibility and ease of use of a command-line tool that is\\
-          used to analyze testing and monitoring files.
+          used to analyze testing and monitoring files
   \end{itemize}
 
   \textbf{Khan Academy, Software Engineering Intern} \hfill Summer 2012
-  \begin{itemize} \itemsep -2pt %reduce space between items
-  \item Simplified A/B testing for changes in certain key metrics.
-  \item Worked on a video recommendation system using collaborative \\
-    filtering: wrote a program that emits correlations for pairs of videos \\
-    and code to allow users to easily access recommendations.
-  \item Wrote a script to monitor Google Code and GitHub for unusually\\
-    high rates of bug reports.
-    (\href{https://github.com/Khan/beep-boop}{https://github.com/Khan/beep-boop})
+  \begin{itemize} \itemsep -2pt % reduce space between items
+  \item Simplified A/B testing for changes in certain key metrics
+  \item Worked on a collaborative filtering video recommendation system
+  \item Wrote monitoring script to check for unusually
+    high rates of bug reports\\
+    (\href{https://github.com/Khan/beep-boop}{github.com/Khan/beep-boop})
   \end{itemize}
 
   \textbf{Instructor, 15-131: Great Practical Ideas for Computer Scientists}
-    \hfill Fall 2013
+    \hfill Fall 2013 \\ \hphantom{1em} \hfill Fall 2014
+
+  \vspace{-1em}\vspace{-1ex}
   \begin{itemize} \itemsep -2pt
     \item Ran a course that teaches students important topics including\\
-      UNIX usage, debugging, and regular expressions.
-    \item Wrote new exercises to test student knowledge of course material.
-    \item Organized TAs to create exercises and written exams.
+      UNIX usage, debugging, and regular expressions
+    \item Wrote new exercises to test student knowledge of course material
+    \item Organized TAs to create exercises and written exams
   \end{itemize}
 
   % Blank line below is to get spacing on "Spring 2013" correct -- otherwise
@@ -83,19 +99,20 @@
 
   \vspace{-1em}\vspace{-1ex}
   \begin{itemize} \itemsep -2pt
-    \item Led two recitations per week, making handouts for each one.  These \\
-      handouts were officially adopted by the course.
-    \item Answered student questions in person and on a discussion board.
+    \item Made handouts for every recitation (two per week) that were later\\
+      officially adopted by the course
+    \item Answered student questions in person and on a discussion board
   \end{itemize}
 
 \section{Languages}
-  Python, C, C++, SML, bash, x86 asm, \LaTeX, Java, Javascript, MIPS asm
+  Python, C, bash, x86 asm, C++, SML, \LaTeX, JavaScript, Java, MIPS asm
 
 \section{Tools}
   vim, git, Perforce, Mercurial, svn, Eclipse, Logisim
 
 \section{Honors}
-  Dean's List: Fall 2011, Spring 2012, Fall 2012, Spring 2013 \\
+  \textbf{Dean's List}: Fall 2011, Spring 2012, Fall 2012, Spring 2013, Spring 2014 \\
+  \textbf{The Honor Society of Phi Kappa Phi}: Member
 
 \end{resume}
 \end{document}
