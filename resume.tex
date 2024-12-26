@@ -3,7 +3,7 @@
 
 \documentclass[overlapped]{res}
 \usepackage[hidelinks]{hyperref}
-\usepackage[none]{hyphenat}
+\usepackage{hyphenat}
 \usepackage{array}
 \usepackage{textcomp}
 % the margin option causes section titles to appear to the left of body text
@@ -11,30 +11,16 @@
 %\usepackage{helvetica} % uses helvetica postscript font (get helvetica.sty)
 %\usepackage{newcent}   % uses new century schoolbook postscript font
 
+\raggedright  % Prefer uneven right hand side over hyphenation
+
 \newcommand{\experience}[5]{
-  \hspace{-9ex}
-  \begin{tabular}{m{12ex} m{\textwidth}}
-    #1 -- #2 & \textbf{#3}, #4 \\
-    & #5
-  \end{tabular}
-  \vspace{-3ex}
+    \textbf{#3}, #4 \hfill #1 -- #2 \\
+    #5
 }
 
 \newcommand{\education}[4]{
-  \hspace{-9ex}
-  \begin{tabular}{m{12ex} m{\textwidth}}
-    \hfill #1 & \textbf{#2}, #3 \\
-    & #4
-  \end{tabular}
-  \vspace{-3ex}
-}
-
-\newcommand{\skills}[1]{
-  \hspace{-9ex}
-  \begin{tabular}{m{12ex} m{\textwidth}}
-    & #1
-  \end{tabular}
-  \vspace{-4ex}
+    \textbf{#2}, #3 \hfill #1 \\
+    #4
 }
 
 \begin{document}
@@ -43,88 +29,104 @@
 
 \address{
   \href{mailto:miriam@mutexlox.com}{miriam@mutexlox.com} \\
+  \hfill \href{https://www.linkedin.com/in/miriam-zimmerman-9a2507117}{www.linkedin.com/in/miriam-zimmerman-9a2507117} \\
 }
 \address{  % The \hfills are to right-align the lines
   \hfill \href{https://mutexlox.com}{https://mutexlox.com} \\
+  \hfill Boston, Massachusetts
 }
 
 \begin{resume}
 
 % \section{Interests} Kernel and other low-level programming and security (primarily binary exploitation, reverse engineering, and cryptography)
 
+\section{Summary}
+  Senior software engineer with extensive experience in C++, C, Python and
+  strong experience with Go and Rust, and experience as a technical lead for
+  small teams of engineers. Skilled at taking a problem from problem
+  statement to design to implementation, even when design and implementation
+  can span years and take multiple engineers.
+
 \section{Experience}
   \vspace{0.5ex}
 
-  \experience{2022}{}{Google: Senior Software Engineer}{ChromeOS}{
+  \experience{2022}{current}{Google: Senior Software Engineer}{ChromeOS Telemetry}{
     \begin{itemize} \itemsep -1pt
-        \item Tech Lead for ChromeOS A/B Experimentation
-        \item Lead implementation for long-term, multi-engineer early-boot
-          A/B experimentation:
+        \item Tech Lead for ChromeOS A/B Experimentation, taking ownership of
+          testing improvements, providing technical guidance for formal process
+          documents, and working with managers and other engineers to
+          coordinate priorities and track project timelines.
+        \item Leading implementation for a multi-year, multi-engineer project
+          that enables early-boot A/B experimentation for platform code:
           \vspace{-0.5em}
           \begin{itemize} \itemsep -1pt
-              \item Collaborate with PM on client outreach, ensuring
-                design meets their needs
-              \item Mentor new hire junior engineer, delegating appropriate
-                work to them
-              \item Implement complex, safety-critical pieces, e.g.
-                disaster recovery
+              \item Conduct client outreach with project manager to ensure
+                design meets user needs.
               \item Project expected to unblock 5+ teams, allowing safer, more
-                data-driven decisions org-wide
+                data-driven decisions org-wide, e.g. better analysis of
+                performance impacts of memory management changes.
           \end{itemize}
-        \item Review experiment configuration changes for all of ChromeOS,
-          plus changes to code I maintain
-        \item Recognized as go-to person for experimentation and one of two
-          go-to people for crash reporting
+        \item Mentor junior engineers to help them improve their skills,
+          delegating well-scoped work to them and providing appropriate
+          guidance, including by writing detailed design documents for broadly
+          scoped problems that break down the problems into suitable pieces.
+        \item Review roughly 10 code changes per week, unblocking numerous
+          clients and ensuring they launch experiments safely without regressing
+          key ``guardrail'' metrics.
+        \item Awards: Silver Q3 2023 company-wide Healthy award, Q4 2023
+          honorable mention for ChromeOS Execution Excellence Emmy, and 15 peer
+          and spot bonuses since late 2022.
     \end{itemize}}
 
-  \experience{2018}{2022}{Google: Software Engineer}{ChromeOS}{
+  \experience{2018}{2022}{Google: Software Engineer}{ChromeOS Telemetry}{
     \begin{itemize} \itemsep -1pt
         \item Designed, planned, and assigned work for early-boot A/B
-          experimentation, prioritizing safety and disaster recovery
+          experimentation, ensuring safe, automated disaster recovery.
        \item Designed and implemented late-boot platform A/B experimentation,
-         working with client teams to ensure their needs were met. Now used by
-         around a dozen experiments
-        \item Designed and implemented system to upload crashes that occur
-          during integration testing
-        \item Implemented integration tests for crash reporting, detecting many
-          bugs
-        \item Implemented alerts to notify teams when their code has high-rate
-          crashes
+         working with clients to assess requirements. Used by dozens of
+         experiments, enabling safer, more data-driven platform changes.
+        \item Established integration tests for crash reporter, eliminating many
+          bugs and preventing large classes of regressions.
+        \item Implemented actionable alerts to enable dozens of teams to easily
+          track specific crash types over time and increase their awareness of
+          new ones.
         \item Improved reliability of crash reporter by adding metrics, fixing
-          bugs, and reducing server load
-        \item Ported interrupt-handling devices from kernel to userspace
-          (in Rust)
+          bugs, and reducing server load that was causing high-severity crashes
+          to be lost.
     \end{itemize}
   }
 
   \experience{2015}{2018}{Google: Software Engineer}{Cloud Security}{
     \begin{itemize} \itemsep -1pt
-        \item Met key enterprise needs as one of two engineers on virtual
-          Trusted Platform Module:
-          \vspace{-0.5em}
-          \begin{itemize} \itemsep -1pt
-            \item Found bugs in Linux TPM driver; wrote and upstreamed fixes
-            \item Implemented TPM register interface to public specification
-          \end{itemize}
+        \item Exceeded key enterprise customer requirements by implementing
+          a virtual Trusted Platform Module, enabling key secure boot workflows
+          for all customers of Google Cloud.
         \item Increased difficulty for attackers that escape a VM to move
-          laterally to other machines
-        \item Evaluated several options for detecting Spectre and Meltdown,
-          reviewed various options' false positive and negative rates, and
-          produced a report on detection options.
+          laterally to other machines, improving Google's security posture
+          against malicious actors.
+        \item Evaluated several options for detecting Spectre and Meltdown
+          attacks, including false positive and negative rates, and produced a
+          report on detection options.
         \item Designed, implemented, and evaluated methods of using x86
-          performance counters to detect specific malicious behavior pattern
-        \item Automated testing for a Type-I hypervisor, reducing time to test
-          from 30 minutes to 5
-        \item Met with a Cloud Security director to discuss and further develop
-          a plan I wrote to improve inclusiveness in the Cloud Security
-          organization
+          performance counters to detect specific malicious behavior patterns,
+          culminating in a well-researched request to Intel for CPU behavior
+          changes that were eventually implemented and released in future
+          hardware generations.
+        \item Automated testing for an experimental Type-I hypervisor used for
+          secure cloud computing, reducing time to test from 30 minutes to 5.
+        \item Collaborated with a Cloud Security director to finalize an
+          inclusion plan that I wrote for the organization.
     \end{itemize}
   }
 
-  \experience{2017}{2021}{TEALS: Volunteer Teacher}{Advanced Placement CS A, Kelso High School}{
+  \experience{2017}{2021}{Volunteer Teacher}{Advanced Placement CS A, Kelso High School}{
     \begin{itemize} \itemsep -1pt
       \item Co-taught an AP CS class to high school students in an
-        underfunded public school
+        underfunded public school, as part of Microsoft's Technology Education
+        and Learning Support program.
+      \item Trained the professional classroom teacher until she was
+        comfortable teaching the class on her own, establishing a sustainable
+        CS curriculum there.
     \end{itemize}
   }
 
@@ -135,10 +137,10 @@
   {B.S. in Computer Science with University Honors}
 
 \section{Languages}
-  \skills{C++, C, Python, Go, bash, x86 assembly, Rust, Java, SML, \LaTeX, JavaScript}
+  C++, C, Python, Go, bash, x86 assembly, Rust, Java, SQL, SML, JavaScript
 
 \section{Tools}
-  \skills{vim, gdb, bazel, googletest, Abseil C++ libs, protobuf, git, Mercurial, svn, Eclipse}
+  vim, gdb, bazel, googletest, Abseil C++ libs, protobuf, git, Mercurial, svn, Eclipse
 
 \end{resume}
 \end{document}
