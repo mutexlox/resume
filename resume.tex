@@ -1,24 +1,24 @@
 % LaTeX file for resume
 % This file uses the resume document class (res.cls)
 
-\documentclass[margin]{res} \usepackage{hyperref}
+\documentclass[overlapped]{res} \usepackage{hyperref}
 \usepackage[none]{hyphenat}
+\usepackage{array}
+\usepackage{textcomp}
 % the margin option causes section titles to appear to the left of body text
 %\textwidth=5.7in % increase textwidth to get smaller right margin
 %\usepackage{helvetica} % uses helvetica postscript font (get helvetica.sty)
 %\usepackage{newcent}   % uses new century schoolbook postscript font
 
-\newcommand{\course}[4]{ %
-    %\begin{minipage}{0.6\resumewidth}
-    \textbf{#1}: \textit{#2} (#4)\\
-      #3
-      \vspace{1em}
-  %\end{minipage} & \begin{minipage}{1em}
-  %    #3\\
-  %    \vphantom{#2}
-  %    \vspace{1em}
- % \end{minipage} \\}
-    \\}
+\newcommand{\experience}[5]{
+  \hspace{-9ex}
+  \begin{tabular}{m{12ex} m{\textwidth}}
+    #1 -- #2 & \textbf{#3}, #4 \\
+    & #5
+  \end{tabular}
+  \vspace{-3ex}
+}
+
 \begin{document}
 
 \name{Miriam Zimmerman}
@@ -35,94 +35,85 @@
 % \section{Interests} Kernel and other low-level programming and security (primarily binary exploitation, reverse engineering, and cryptography)
 
 \section{Experience}
-  \textbf{Google: Senior Software Engineer}, ChromeOS \hfill 2022 --
-  \begin{minipage}{0.84\textwidth}
-    \vspace{0.2em}
+  \vspace{0.5ex}
+
+  \experience{2022}{}{Google: Senior Software Engineer}{ChromeOS}{
     \begin{itemize} \itemsep -1pt
         \item Tech Lead for ChromeOS Experimentation
-        \item Led implementation for early-boot A/B experimentation:
+        \item Leading implementation for long-term, multi-engineer early-boot
+          A/B experimentation:
           \vspace{-0.5em}
           \begin{itemize} \itemsep -1pt
-              \item Collaborated with Product Manager on outreach to
-                prospective client teams, ensuring our solution met their needs
-              \item Mentored new hire junior engineer, delegating work to them
-              \item Implemented complex, safety-critical pieces, e.g.
+              \item Collaborating with PM on client outreach, ensuring
+                design meets their needs
+              \item Mentoring new hire junior engineer, delegating appropriate
+                work to them
+              \item Implementing complex, safety-critical pieces, e.g.
                 disaster recovery
+              \item Anticipated to unblock 5+ teams, allowing safer, more
+                data-driven decisions org-wide
           \end{itemize}
-        \item Performed reviews of configuration changes for A/B testing,
-          checking for safety, proper data analysis, and code health
-    \end{itemize}
-  \end{minipage}
+        \item Code review 5-10 A/B test configuration changes per week, plus 5-10
+          code changes
+        \item Recognized as go-to person for experimentation and one of two
+          go-to people for crash reporting
+    \end{itemize}}
 
-  \textbf{Google: Software Engineer}, ChromeOS \hfill 2018 -- 2022
-  \begin{minipage}{0.84\textwidth}
-    \vspace{0.2em}
+  \experience{2018}{2022}{Google: Software Engineer}{ChromeOS}{
     \begin{itemize} \itemsep -1pt
-        \item Designed, planned, and assigned work for long-term,
-          multi-engineer early-boot A/B experimentation project, prioritizing
-          safety and revovery from buggy experiments
-       \item Designed and implemented late-boot A/B experimentation outside of
-          browser, working with client teams to ensure their needs were met
+        \item Designed, planned, and assigned work for early-boot A/B
+          experimentation, prioritizing safety and disaster recovery
+       \item Designed and implemented late-boot platform A/B experimentation,
+         working with client teams to ensure their needs were met. Now used by
+         around a dozen experiments
         \item Designed and implemented system to upload crashes that occur
-          during integration testing, collaborating with test lab infrastructure
-          teams
+          during integration testing
         \item Implemented integration tests for crash reporting, detecting many
           bugs
-        \item Implemented alerts to notify teams when code has high-rate crashes
-        \item Improved reliability of crash reporting system by implementing
-          metrics, fixing bugs, and managing server load
+        \item Implemented alerts to notify teams when their code has high-rate
+          crashes
+        \item Improved reliability of crash reporter by adding metrics, fixing
+          bugs, and reducing server load
         \item Ported interrupt-handling devices from kernel to userspace
           (in Rust)
     \end{itemize}
-  \end{minipage}
+  }
 
-  \textbf{Google: Software Engineer}, Cloud Security \hfill 2015 -- 2018
-  \begin{minipage}{0.84\textwidth}
-    \vspace{0.2em}
+  \experience{2015}{2018}{Google: Software Engineer}{Cloud Security}{
     \begin{itemize} \itemsep -1pt
-        \item Worked on Trusted Platform Module code and related software:
+        \item Met key enterprise needs as one of two engineers on virtual
+          Trusted Platform Module:
           \vspace{-0.5em}
           \begin{itemize} \itemsep -1pt
             \item Found bugs in Linux TPM driver; wrote and upstreamed fixes
-            \item Wrote code to generate Endorsement Key certificates
             \item Implemented TPM register interface to public specification
-            \item Dramatically increased test coverage and added automated fuzzing
           \end{itemize}
-        \item Substantially increased difficulty for an attacker that breaks
-          out of a virtual machine to move laterally to other production
-          machines
-        \item Evaluated several options for detecting Spectre and Meltdown:
-          \vspace{-0.5em}
-          \begin{itemize} \itemsep -1pt
-            \item Reviewed research on side-channel cache attack detection
-            \item Proposed detection methods using performance counters
-            \item Measured false positive/negative rates for proposed schemes
-            \item Wrote a widely-read internal report on detection options
-          \end{itemize}
-        \item Designed, implemented, and evaluated several hardware
-          performance counter options to detect specific
-          malicious behavior on GCE
-        \item Automated test process for a minimal Type-I hypervisor and
-          reduced time to run tests from roughly 30 minutes to roughly 5
-        \item Developed a plan to improve inclusiveness in the Cloud Security
-          organization as it grows, shared it with the directors,
-          and met with one director to discuss in depth and further develop it
+        \item Increased difficulty for attackers that escape a VM to move
+          laterally to other machines
+        \item Evaluated several options for detecting Spectre and Meltdown,
+          reviewed various options' false positive and negative rates, and
+          produced a report on detection options.
+        \item Designed, implemented, and evaluated methods of using x86
+          performance counters to detect specific malicious behavior pattern
+        \item Automated testing for a Type-I hypervisor, reducing time to test
+          from 30 minutes to 5
+        \item Developed plan to improve inclusiveness in the Cloud Security
+          organization, shared with the directors, and met with one director to
+          discuss in depth and further develop it
     \end{itemize}
-  \end{minipage}
+  }
 
-  \textbf{TEALS: Volunteer Teacher} \hfill 2017 -- 2021
-  \begin{minipage}{0.84\textwidth}
-    \vspace{0.2em}
+  \experience{2017}{2021}{TEALS: Volunteer Teacher}{Advanced Placement CS A, Kelso High School}{
     \begin{itemize} \itemsep -1pt
-      \item Crafted and delivered lectures on Advanced Placement CS topics
-        to high school students in an underprivileged school
+      \item Co-taught an AP CS class to high school students in an
+        underfunded public school
     \end{itemize}
-  \end{minipage}
+  }
 
 \section{Education}
   \textbf{Carnegie Mellon University}, School of Computer Science
     \hfill May 2015\\
-  B.S. in Computer Science with University Honors (GPA: 3.82)
+  B.S. in Computer Science with University Honors
 
 \section{Languages}
   C++, C, Python, Go, bash, x86 assembly, Rust, Java, SML, \LaTeX, JavaScript
