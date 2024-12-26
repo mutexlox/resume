@@ -4,7 +4,7 @@
 \documentclass[margin]{res}
 \usepackage{hyperref}
 % the margin option causes section titles to appear to the left of body text
-\textwidth=5.7in % increase textwidth to get smaller right margin
+%\textwidth=5.7in % increase textwidth to get smaller right margin
 %\usepackage{helvetica} % uses helvetica postscript font (get helvetica.sty)
 %\usepackage{newcent}   % uses new century schoolbook postscript font
 
@@ -30,20 +30,24 @@
   \textbf{Carnegie Mellon University}, School of Computer Science
     \hfill May 2015\\
   B.S. in Computer Science\\
-  Cumulative GPA: 3.84
+  Cumulative GPA: 3.81
 
 \section{Notable coursework}
   \textbf{Current}\\
-  \hphantom{ } 18-487, Intro. to Computer \& Network Security \& Applied
-      Crypto.\\
+  \hphantom{ } 15-410, Operating System Design and Implementation\\
   \textbf{Past}\vspace{0.25em}\\
   \begin{tabular}{ll}
-                     15-213, Introduction to Computer Systems & A\\
-      15-251, Great Theoretical Ideas for Computer Scientists & A\\
-                                   21-600, Mathematical Logic & A
+    18-487, Intro. to Computer \& Network Security \& Applied Crypto. & A\\
+                             15-213, Introduction to Computer Systems & A\\
+                                           21-600, Mathematical Logic & A
   \end{tabular}
 
 \section{Experience}
+  \textbf{Google, Software Engineering Intern} \hfill Summer 2014
+  \begin{itemize} \itemsep -2pt  % reduce space between items
+    \item I will work on either kernel exploitation and vulnerability discovery \\
+      or discovering weaknesses in popular SSL libraries.
+  \end{itemize}
   \textbf{Google, Site Reliability Engineering Intern}
     \hfill Summer 2013
   \begin{itemize} \itemsep -2pt  % reduce space between items
@@ -55,15 +59,13 @@
 
   \textbf{Khan Academy, Software Engineering Intern} \hfill Summer 2012
   \begin{itemize} \itemsep -2pt %reduce space between items
-  \item Simplified A/B testing for changes in key metrics. My changes have \\
-    been used in nearly all A/B tests at Khan Academy since my internship.
-  \item Worked on a video recommendations system by writing a program \\
-    that emits correlations for pairs of videos and implementing a database \\
-    model in Google App Engine's datastore.
+  \item Simplified A/B testing for changes in certain key metrics.
+  \item Worked on a video recommendation system using collaborative \\
+    filtering: wrote a program that emits correlations for pairs of videos \\
+    and code to allow users to easily access recommendations.
   \item Wrote a script to monitor Google Code and GitHub for unusually\\
-    high rates of bug reports. The script has caught at least one major bug\\
-    before any developers noticed it.  (\href{https://github.com/Khan/beep-boop}
-                                            {https://github.com/Khan/beep-boop})
+    high rates of bug reports.
+    (\href{https://github.com/Khan/beep-boop}{https://github.com/Khan/beep-boop})
   \end{itemize}
 
   \textbf{Instructor, 15-131: Great Practical Ideas for Computer Scientists}
@@ -71,9 +73,8 @@
   \begin{itemize} \itemsep -2pt
     \item Ran a course that teaches students important topics including\\
       UNIX usage, debugging, and regular expressions.
-    \item Wrote many new programs to test student knowledge of course material.
-    \item Organized TAs to create even more programs to test student knowledge.
-    \item Updated handouts about the material and turned them into web pages.
+    \item Wrote new exercises to test student knowledge of course material.
+    \item Organized TAs to create exercises and written exams.
   \end{itemize}
 
   % Blank line below is to get spacing on "Spring 2013" correct -- otherwise
@@ -83,14 +84,13 @@
 
   \vspace{-1em}\vspace{-1ex}
   \begin{itemize} \itemsep -2pt
-    \item Made a handout for each recitation (2 per week) and led a recitation. \\
-      These handouts were adopted by the course and are now used for every \\
-      recitation even though I am not TAing the course this semester.
+    \item Led two recitations per week, making handouts for each one.  These \\
+      handouts were officially adopted by the course.
     \item Answered student questions in person and on a discussion board.
   \end{itemize}
 
 \section{Languages}
-  Python, C, C++, SML, \LaTeX, bash, Java, x86 assembly, Javascript, MIPS
+  Python, C, C++, SML, bash, x86 asm, \LaTeX, Java, Javascript, MIPS asm
 
 \section{Tools}
   vim, git, Perforce, Mercurial, svn, Eclipse, Logisim
