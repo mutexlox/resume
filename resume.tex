@@ -19,6 +19,23 @@
   \vspace{-3ex}
 }
 
+\newcommand{\education}[4]{
+  \hspace{-9ex}
+  \begin{tabular}{m{12ex} m{\textwidth}}
+    \hfill #1 & \textbf{#2}, #3 \\
+    & #4
+  \end{tabular}
+  \vspace{-3ex}
+}
+
+\newcommand{\skills}[1]{
+  \hspace{-9ex}
+  \begin{tabular}{m{12ex} m{\textwidth}}
+    & #1
+  \end{tabular}
+  \vspace{-4ex}
+}
+
 \begin{document}
 
 \name{Miriam Zimmerman}
@@ -111,15 +128,16 @@
   }
 
 \section{Education}
-  \textbf{Carnegie Mellon University}, School of Computer Science
-    \hfill May 2015\\
-  B.S. in Computer Science with University Honors
+  \vspace{0.5ex}
+
+  \education{2015}{Carnegie Mellon University}{School of Computer Science}
+  {B.S. in Computer Science with University Honors}
 
 \section{Languages}
-  C++, C, Python, Go, bash, x86 assembly, Rust, Java, SML, \LaTeX, JavaScript
+  \skills{C++, C, Python, Go, bash, x86 assembly, Rust, Java, SML, \LaTeX, JavaScript}
 
 \section{Tools}
-  vim, gdb, bazel, googletest, Abseil C++ libs, protobuf, git, Mercurial, svn, Eclipse
+  \skills{vim, gdb, bazel, googletest, Abseil C++ libs, protobuf, git, Mercurial, svn, Eclipse}
 
 \end{resume}
 \end{document}
