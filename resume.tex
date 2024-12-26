@@ -3,6 +3,7 @@
 
 \documentclass[margin]{res}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 % the margin option causes section titles to appear to the left of body text
 %\textwidth=5.7in % increase textwidth to get smaller right margin
 %\usepackage{helvetica} % uses helvetica postscript font (get helvetica.sty)
@@ -25,96 +26,102 @@
 
 \address{
   \href{mailto:joshz@joshz.org}{joshz@joshz.org} \\
-  (302) 468-7537
 }
 \address{  % The \hfills are to right-align the lines
-  \hfill \href{http://joshz.org}{http://joshz.org} \\
-  \hfill
-    \href{https://github.com/joshzimmerman}{https://github.com/joshzimmerman}
+  \hfill \href{https://joshz.org}{https://joshz.org} \\
 }
 
 \begin{resume}
 
-\section{Education}
-  \textbf{Carnegie Mellon University}, School of Computer Science
-    \hfill May 2015\\
-  B.S. in Computer Science with University Honors\\
-  Cumulative GPA: 3.82
-
-\section{Notable coursework}
- \course{15-410}{Operating System Design and Implementation}
- {Wrote fully preemptive, multithreaded kernel; thread library; bootloader.}{A}
- \course{15-418}{Parallel Computer Architecture and Programming}
-  {Wrote and optimized parallel code. \\
-  Implemented lockless algorithms on the RMC memory model.}{B}
-  \course{18-487}{Intro. to Computer \& Network Security \& Applied Crypto.}
- {Performed binary exploitation, cryptographic attacks, and web exploitation.}{A}
-%  \end{tabular}
-      \vspace{-2em}
+%\section{Notable coursework}
+% \course{15-410}{Operating System Design and Implementation}
+% {Wrote preemptive, multithreaded kernel and thread library. TA'd course.}{A}
+% \course{15-418}{Parallel Computer Architecture and Programming}
+%  {Wrote and optimized parallel code.}{B}
+%%  \end{tabular}
+%      \vspace{-2em}
 
 % \section{Interests} Kernel and other low-level programming and security (primarily binary exploitation, reverse engineering, and cryptography)
 
 \section{Experience}
+  \textbf{Google: Software Engineer}, Google Cloud Security \hfill July 2015 --
+  \begin{minipage}{0.84\textwidth}
+    \vspace{0.2em}
+    \begin{itemize}
+        \item Worked on Trusted Platform Module code and related software:
+          \vspace{-0.5em}
+          \begin{itemize}
+            \item Found bugs in Linux kernel's TPM 2.0 driver; wrote and
+              merged fixes to upstream
+            \item Wrote code to generate Endorsement Key certificates
+            \item Implemented TPM register interface to public specification
+            \item Dramatically increased test coverage and added automated fuzzing
+          \end{itemize}
+        \item Substantially increased difficulty for an attacker that manages
+          to break out of a virtual machine to move laterally to other
+          production machines.
+        \item Evaluated several options for detecting the Spectre and Meltdown
+          vulnerabilities using Intel hardware performance counters:
+          \vspace{-0.5em}
+          \begin{itemize}
+            \item Reviewed research on side-channel cache attack detection
+            \item Proposed detection methods
+            \item Measured false positive/negative rates for proposed schemes
+            \item Wrote a widely-read internal report on detection options
+          \end{itemize}
+        \item Designed, implemented, and evaluated several hardware
+          performance counter options to attempt to detect specific
+          malicious behavior on Google Compute Engine.
+        \item Worked on implementation and test infrastructure for a
+          minimal Type-I hypervisor. Automated test process and reduced time
+          to run tests from roughly 30 minutes to roughly 5.
+        \item Developed a plan to improve inclusiveness in the Cloud Security
+          organization as it grows, shared it with the directors of the org,
+          and met with one of them to discuss it in depth and further develop
+          it.
+    \end{itemize}
+  \end{minipage}
+
   \textbf{Google: Software Engineering Intern} \hfill Summer 2014
-  \begin{itemize} \itemsep -2pt  % reduce space between items
-    \item Worked on hardware key storage support for end-to-end, Google's\\
-      OpenPGP Chrome extension
-      (\href{https://code.google.com/p/end-to-end/}{code.google.com/p/end-to-end/})
-    \item Participated in a successful penetration testing exercise
-  \end{itemize}
+  \begin{minipage}{0.84\textwidth}
+    \vspace{0.2em}
+    \begin{itemize}
+      \item Worked on hardware key storage support for end-to-end
+      \item Participated in a successful penetration testing exercise
+    \end{itemize}
+  \end{minipage}
+
   \textbf{Google: Site Reliability Engineering Intern}
     \hfill Summer 2013
-  \begin{itemize} \itemsep -2pt  % reduce space between items
-    \item Improved reliability of a program that garbage collects old files
-    \item Increased accessibility of a tool used to analyze monitoring files
+  \begin{itemize}
+    \vspace{0.2em}
+    \begin{minipage}{0.84\textwidth}
+      \item Improved reliability of a program that garbage collects old files
+      \item Increased usability of a tool used to analyze monitoring files
+    \end{minipage}
   \end{itemize}
 
   \textbf{Khan Academy: Software Engineering Intern} \hfill Summer 2012
-  \begin{itemize} \itemsep -2pt % reduce space between items
-  \item Simplified A/B testing for changes in certain key metrics
-  \item Implemented part of a collaborative filtering video recommender
-  \item Wrote a script to monitor rate of bug reports
-    (\href{https://github.com/Khan/beep-boop}{git.io/dweXRw})
+  \begin{itemize}
+    \vspace{0.2em}
+    \begin{minipage}{0.84\textwidth}
+      \item Simplified A/B testing for changes in certain key metrics
+      \item Wrote a script to monitor rate of bug reports
+        (\href{https://github.com/Khan/beep-boop}{git.io/dweXRw})
+    \end{minipage}
   \end{itemize}
 
-  \textbf{15-410: Operating System Design and Implementation: TA} \hfill Spring 2015
-  \begin{itemize} \itemsep -2pt
-      \item Graded student work
-      \item Held office hours and wrote exam questions
-    \end{itemize}
-
-  \textbf{15-131 Great Practical Ideas for Computer Scientists: Instructor}
-    \hfill Fall 2013 \\ \hphantom{1em} \hfill Fall 2014
-
-  \vspace{-1em}\vspace{-1ex}
-  \begin{itemize} \itemsep -2pt
-    \item Led a course that teaches students topics like UNIX and debugging
-    \item Wrote exercises and exam questions, organized TAs to create same
-  \end{itemize}
-
-  % Blank line below is to get spacing on "Spring 2013" correct -- otherwise
-  % the hphantom doesn't change the placement and it's too far left.
-  \textbf{15-122 Principles of Imperative Computation: TA}
-    \hfill Fall 2012\\ \hphantom{1em} \hfill Spring 2013
-
-  \vspace{-1em}\vspace{-1ex}
-  \begin{itemize} \itemsep -2pt
-    \item Composed handouts for every recitation that are now used by all TAs
-    \item Taught two recitation sessions per week
-    \item Answered student questions and graded student work
-  \end{itemize}
+\section{Education}
+  \textbf{Carnegie Mellon University}, School of Computer Science
+    \hfill May 2015\\
+  B.S. in Computer Science with University Honors (GPA: 3.82)
 
 \section{Languages}
-  C, Python, bash, x86 asm, C++, SML, \LaTeX, JavaScript, Java, MIPS asm
+  C++, C, Python, bash, x86 assembly, Java, SML, \LaTeX, JavaScript
 
 \section{Tools}
-  vim, git, Mercurial, svn, Eclipse, Logisim
+  vim, bazel, googletest, Abseil C++ libs, protobuf, git, Mercurial, svn, Eclipse
 
-\section{Honors}
-  \textbf{Dean's List}: F11, S12, F12, S13, S14, F14 \\
-  \textbf{Honor Society of Phi Kappa Phi}: Member and Student Vice President
 \end{resume}
 \end{document}
-
-
 
